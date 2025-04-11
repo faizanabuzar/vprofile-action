@@ -36,8 +36,8 @@ jobs:
         uses: warchant/setup-sonar-scanner@v7
 
       # SonarCloud Scan
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
@@ -51,3 +51,4 @@ jobs:
             -Dsonar.jacoco.reportPaths=target/jacoco.exec
             -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml
             -X
+
